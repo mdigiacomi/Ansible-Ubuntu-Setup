@@ -8,6 +8,3 @@
 - name: Rebooting Server
   shell: shutdown -r now
 - name: Wait for system to become reachable again
-  wait_for_connection:
-    delay: '45'
-    timeout: '300'
