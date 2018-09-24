@@ -7,4 +7,3 @@
   template: src=50-cloud-init.yaml.j2 dest=/etc/netplan/50-cloud-init.yaml
 - name: Rebooting Server
   shell: shutdown -r now
-- name: Wait for system to become reachable again
