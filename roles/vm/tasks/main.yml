@@ -5,5 +5,8 @@
   become: true
 - name: Creates the index.php file
   template: src=50-cloud-init.yaml.j2 dest=/etc/netplan/50-cloud-init.yaml
+  become: true
 - name: Rebooting Server
   shell: shutdown -r now
+  become: true
+
