@@ -1,0 +1,11 @@
+---
+# This playbook deploys the whole application stack in this site.
+
+- name: Setup New VM Hostname and IP
+  hosts: all
+  remote_user: vmadmin
+  become_method: sudo
+  become_user: root
+
+  roles:
+    - vm
