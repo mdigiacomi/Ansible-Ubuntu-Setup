@@ -3,10 +3,11 @@
 - name: Set New Hostname {{New_Hostname}}
   command: bash -c "hostnamectl set-hostname {{New_Hostname}}"
   become: true
-- name: Migrate the VM Config
+- name: Update the NetPlan Config
   template: src=50-cloud-init.yaml.j2 dest=/etc/netplan/50-cloud-init.yaml
   become: true
 - name: Reboot immediately if there was a change.
   shell: "sleep 5 && reboot"
   async: 1
   poll: 0
+  become: true
